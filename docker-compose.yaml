@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  gitlab-ci-multi-runner-for-docker:
+  image: nsomeya/docker-gitlab-ci-multi-runner
+  volumes:
+    - ./data:/home/gitlab_ci_multi_runner/data
+  environment:
+    - CI_SERVER_URL=${CI_SERVER_URL}
+    - RUNNER_TOKEN=${RUNNER_TOKEN}
+    - RUNNER_DESCRIPTION=blockchain
+    - RUNNER_EXECUTOR=shell
+  restart: always
