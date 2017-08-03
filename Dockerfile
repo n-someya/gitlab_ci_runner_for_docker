@@ -13,3 +13,4 @@ RUN add-apt-repository \
    $(lsb_release -cs) \
    stable" &&\
    apt-get update && apt-get install -y docker-ce
+RUN echo "gitlab_ci_multi_runner ALL=(ALL) NOPASSWD:ALL" | tee -a /etc/sudoers
